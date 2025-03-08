@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sitecore.Xdb.Processing.Queue.SqlServer.XConnect</name>
+    </assembly>
+    <members>
+        <member name="T:Sitecore.Xdb.Processing.Queue.SqlServer.XConnect.ContactProcessingPoolServicesConfiguration">
+            <summary>
+            Adds contact processing pool services to the service collection.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Xdb.Processing.Queue.SqlServer.XConnect.ContactProcessingPoolServicesConfiguration.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <inheritdoc />
+        </member>
+        <member name="T:Sitecore.Xdb.Processing.Queue.SqlServer.XConnect.InteractionProcessingPoolServicesConfiguration">
+            <summary>
+            Adds interaction processing pool services to the service collection.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Xdb.Processing.Queue.SqlServer.XConnect.InteractionProcessingPoolServicesConfiguration.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

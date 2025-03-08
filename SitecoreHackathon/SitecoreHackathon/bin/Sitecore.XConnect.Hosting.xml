@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sitecore.XConnect.Hosting</name>
+    </assembly>
+    <members>
+        <member name="T:Sitecore.XConnect.Hosting.IWebHost">
+            <summary>
+            Defines common xConnect web host.
+            </summary>
+        </member>
+        <member name="M:Sitecore.XConnect.Hosting.IWebHost.StartAsync(System.Threading.CancellationToken)">
+            <summary>
+            Starts the host.
+            </summary>
+            <param name="cancellationToken">The cancellation token.</param>
+        </member>
+        <member name="T:Sitecore.XConnect.Hosting.ServiceProviderExtensions">
+            <summary>
+            Extension methods for <see cref="T:System.IServiceProvider"/>.
+            </summary>
+        </member>
+        <member name="M:Sitecore.XConnect.Hosting.ServiceProviderExtensions.StartWebHostAsync(System.IServiceProvider,System.Threading.CancellationToken)">
+            <summary>
+            Starts the web host defined by <see cref="T:Sitecore.XConnect.Hosting.IWebHost"/>.
+            </summary>
+            <param name="serviceProvider">The service provider which is used to resolve services.</param>
+            <param name="cancellationToken">The cancellation token which can be used for stopping the web host.</param>
+        </member>
+    </members>
+</doc>

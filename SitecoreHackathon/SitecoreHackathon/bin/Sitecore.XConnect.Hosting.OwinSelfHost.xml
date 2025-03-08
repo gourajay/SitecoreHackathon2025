@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sitecore.XConnect.Hosting.OwinSelfHost</name>
+    </assembly>
+    <members>
+        <member name="T:Sitecore.XConnect.Hosting.OwinSelfHost.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.Hosting.OwinSelfHost.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.Hosting.OwinSelfHost.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.Hosting.OwinSelfHost.Resources.CancellationTokenMustSupportCancellation">
+            <summary>
+              Looks up a localized string similar to Cancellation token must be capable of being in cancelled state.
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.Hosting.OwinSelfHost.Resources.CannotStartWebHost">
+            <summary>
+              Looks up a localized string similar to Cannot start web host.
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.Hosting.OwinSelfHost.Resources.ServiceRunning">
+            <summary>
+              Looks up a localized string similar to The service is running.
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.Hosting.OwinSelfHost.Resources.StartingWebHost">
+            <summary>
+              Looks up a localized string similar to Starting web host listening on {0}.
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.Hosting.OwinSelfHost.Resources.StoppingWebHost">
+            <summary>
+              Looks up a localized string similar to Stopping web host listening on {0}.
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.Hosting.OwinSelfHost.Resources.WebHostStarted">
+            <summary>
+              Looks up a localized string similar to Web host has been started.
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.Hosting.OwinSelfHost.Resources.WebHostStopped">
+            <summary>
+              Looks up a localized string similar to Web host has been stopped.
+            </summary>
+        </member>
+        <member name="T:Sitecore.XConnect.Hosting.OwinSelfHost.WebHost">
+            <summary>
+            OWIN self host implementation of <seealso cref="T:Sitecore.XConnect.Hosting.IWebHost" />.
+            </summary>
+        </member>
+        <member name="M:Sitecore.XConnect.Hosting.OwinSelfHost.WebHost.#ctor(Microsoft.Extensions.Configuration.IConfiguration,System.IServiceProvider,Microsoft.Extensions.Logging.ILogger{Sitecore.XConnect.Hosting.OwinSelfHost.WebHost})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.XConnect.Hosting.OwinSelfHost.WebHost" /> class.
+            </summary>
+            <param name="options">The options to retrieve configuration parameters from.</param>
+            <param name="serviceProvider">The service provider used to resolve services.</param>
+            <param name="logger">The logger to log messages to.</param>
+        </member>
+        <member name="M:Sitecore.XConnect.Hosting.OwinSelfHost.WebHost.#ctor(Sitecore.XConnect.Hosting.OwinSelfHost.WebHostOptions,System.IServiceProvider,Microsoft.Extensions.Logging.ILogger{Sitecore.XConnect.Hosting.OwinSelfHost.WebHost})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.XConnect.Hosting.OwinSelfHost.WebHost"/> class.
+            </summary>
+            <param name="options">The options used to configure the web host.</param>
+            <param name="serviceProvider">The service provider used to resolve services.</param>
+            <param name="logger">The logger to log messages to.</param>
+        </member>
+        <member name="P:Sitecore.XConnect.Hosting.OwinSelfHost.WebHost.ServiceProvider">
+            <summary>
+            The service provider used to resolve services.
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.Hosting.OwinSelfHost.WebHost.Options">
+            <summary>
+            The options used to configure the web host.
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.Hosting.OwinSelfHost.WebHost.Logger">
+            <summary>
+            The logger to log messages to.
+            </summary>
+        </member>
+        <member name="M:Sitecore.XConnect.Hosting.OwinSelfHost.WebHost.StartAsync(System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Sitecore.XConnect.Hosting.OwinSelfHost.WebHost.StartUp(System.Threading.CancellationToken)">
+            <summary>
+            Starts the web host.
+            </summary>
+            <param name="cancellationToken">The cancellation token used to stop the web host.</param>
+        </member>
+        <member name="M:Sitecore.XConnect.Hosting.OwinSelfHost.WebHost.Configure(Owin.IAppBuilder)">
+            <summary>
+            Configures the web host application.
+            </summary>
+            <param name="builder">The builder to configure the web host app.</param>
+        </member>
+        <member name="M:Sitecore.XConnect.Hosting.OwinSelfHost.WebHost.StartWebApp(System.String,System.Action{Owin.IAppBuilder})">
+            <summary>
+            Starts the web application.
+            </summary>
+            <param name="url">The URL to listen on.</param>
+            <param name="startup">The action to configure web app on startup.</param>
+            <returns>An <see cref="T:System.IDisposable"/> instance that can be called to shut down the web app.</returns>
+        </member>
+        <member name="T:Sitecore.XConnect.Hosting.OwinSelfHost.WebHostDependencyResolver">
+            <summary>
+            Dependency resolver for web host.
+            </summary>
+            <seealso cref="T:System.Web.Http.Dependencies.IDependencyResolver" />
+        </member>
+        <member name="M:Sitecore.XConnect.Hosting.OwinSelfHost.WebHostDependencyResolver.#ctor(System.IServiceProvider,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.XConnect.Hosting.OwinSelfHost.WebHostDependencyResolver"/> class.
+            </summary>
+            <param name="serviceProvider">The service provider to resolve services from.</param>
+            <param name="disposeProvider">Indicates whether <paramref name="serviceProvider"/> should be disposed by this instance.</param>
+        </member>
+        <member name="M:Sitecore.XConnect.Hosting.OwinSelfHost.WebHostDependencyResolver.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="M:Sitecore.XConnect.Hosting.OwinSelfHost.WebHostDependencyResolver.GetService(System.Type)">
+            <inheritdoc />
+        </member>
+        <member name="M:Sitecore.XConnect.Hosting.OwinSelfHost.WebHostDependencyResolver.GetServices(System.Type)">
+            <inheritdoc />
+        </member>
+        <member name="M:Sitecore.XConnect.Hosting.OwinSelfHost.WebHostDependencyResolver.BeginScope">
+            <inheritdoc />
+        </member>
+        <member name="T:Sitecore.XConnect.Hosting.OwinSelfHost.WebHostOptions">
+            <summary>
+            Options for starting self-hosted web application.
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.Hosting.OwinSelfHost.WebHostOptions.Url">
+            <summary>
+            Gets or sets the URL the web host will listen on.
+            </summary>
+        </member>
+    </members>
+</doc>
