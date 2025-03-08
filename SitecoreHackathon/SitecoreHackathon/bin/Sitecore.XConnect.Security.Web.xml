@@ -1,0 +1,156 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sitecore.XConnect.Security.Web</name>
+    </assembly>
+    <members>
+        <member name="F:Sitecore.XConnect.Security.Web.CertificateAuthenticationAttribute.ValidCertificateThumbprints">
+            <summary>
+            The thumbprints of the valid certificates.
+            </summary>
+        </member>
+        <member name="M:Sitecore.XConnect.Security.Web.CertificateAuthenticationAttribute.#ctor(System.String[])">
+            <summary>
+            Create a new instance.
+            </summary>
+            <param name="thumbprints">The thumbprints of the valid certificates.</param>
+        </member>
+        <member name="M:Sitecore.XConnect.Security.Web.CertificateAuthenticationAttribute.#ctor(System.Collections.Generic.IEnumerable{System.String},System.String[])">
+            <summary>
+            Create a new instance.
+            </summary>
+            <param name="ignorePaths">Path should be ignored.</param>
+            <param name="thumbprints">The thumbprints of the valid certificates.</param>
+        </member>
+        <member name="P:Sitecore.XConnect.Security.Web.CertificateAuthenticationAttribute.AllowMultiple">
+            <inheritdoc />
+        </member>
+        <member name="P:Sitecore.XConnect.Security.Web.CertificateAuthenticationAttribute.ValidCertificates">
+            <summary>
+            Gets or sets the thumbprints of the valid certificates.
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.Security.Web.CertificateAuthenticationAttribute.IgnoredPaths">
+            <summary>
+            Gets the list of routes that should be ignored during certificate validation.
+            </summary>
+        </member>
+        <member name="M:Sitecore.XConnect.Security.Web.CertificateAuthenticationAttribute.AuthenticateAsync(System.Web.Http.Filters.HttpAuthenticationContext,System.Threading.CancellationToken)">
+            <summary>
+            Authenticates the request.
+            </summary>
+            <param name="context">The context being authenticated.</param>
+            <param name="cancellationToken">A cancellation token to cancel the operation. NOT USED.</param>
+            <returns>A task for the operation.</returns>
+        </member>
+        <member name="M:Sitecore.XConnect.Security.Web.CertificateAuthenticationAttribute.NormalizeThumbprintString(System.String)">
+            <summary>
+            Normalizes a thumbprint string for comparison.
+            </summary>
+            <param name="input">The thumbprint to normalize.</param>
+            <returns>A normalized version of the input thumbprint.</returns>
+        </member>
+        <member name="T:Sitecore.XConnect.Security.Web.CertificateValidationHttpConfiguration">
+            <summary>
+            Configures <see cref="T:System.Web.Http.HttpConfiguration"/> with certificate validation.
+            </summary>
+            <seealso cref="T:Sitecore.XConnect.DependencyInjection.Web.Abstractions.IHttpConfiguration" />
+        </member>
+        <member name="F:Sitecore.XConnect.Security.Web.CertificateValidationHttpConfiguration.ValidateThumbprintKey">
+            <summary>
+            The key to read validate thumbprint value from app settings.
+            </summary>
+        </member>
+        <member name="M:Sitecore.XConnect.Security.Web.CertificateValidationHttpConfiguration.#ctor(Microsoft.Extensions.Logging.ILogger{Sitecore.XConnect.DependencyInjection.Web.Abstractions.IHttpConfiguration},Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.XConnect.Security.Web.CertificateValidationHttpConfiguration"/> class.
+            </summary>
+            <param name="logger">The logger to log messages to.</param>
+            <param name="configuration">The configuration to read options from.</param>
+        </member>
+        <member name="M:Sitecore.XConnect.Security.Web.CertificateValidationHttpConfiguration.#ctor(Microsoft.Extensions.Logging.ILogger{Sitecore.XConnect.DependencyInjection.Web.Abstractions.IHttpConfiguration},Microsoft.Extensions.Configuration.IConfiguration,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.XConnect.Security.Web.CertificateValidationHttpConfiguration"/> class.
+            </summary>
+            <param name="logger">The logger to log messages to.</param>
+            <param name="configuration">The configuration to read options from.</param>
+            <param name="appSettings">The application settings collection.</param>
+        </member>
+        <member name="P:Sitecore.XConnect.Security.Web.CertificateValidationHttpConfiguration.IgnoredPaths">
+            <summary>
+            Gets the ignored paths.
+            </summary>
+        </member>
+        <member name="M:Sitecore.XConnect.Security.Web.CertificateValidationHttpConfiguration.ConfigureServices(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Configures the services.
+            </summary>
+            <param name="config">The configuration to configure services in.</param>
+        </member>
+        <member name="M:Sitecore.XConnect.Security.Web.CertificateValidationHttpConfiguration.CreateCertificateAuthenticationFilter(System.Collections.Generic.IEnumerable{System.String},System.String[])">
+            <summary>
+            Creates the certificate authentication filter.
+            </summary>
+            <param name="ignoredPaths">The list of paths to be ignored.</param>
+            <param name="thumbprints">The thumbprints of the valid certificates.</param>
+            <returns>An instance of <see cref="T:System.Web.Http.Filters.IFilter"/>.</returns>
+        </member>
+        <member name="T:Sitecore.XConnect.Security.Web.SslValidationHttpConfiguration">
+            <summary>
+            Adds filter to config which performs adding SSL validation filter to instance Http configuration.
+            </summary>
+            <seealso cref="T:Sitecore.XConnect.DependencyInjection.Web.Abstractions.IHttpConfiguration" />
+        </member>
+        <member name="M:Sitecore.XConnect.Security.Web.SslValidationHttpConfiguration.#ctor(Microsoft.Extensions.Logging.ILogger{Sitecore.XConnect.DependencyInjection.Web.Abstractions.IHttpConfiguration},Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.XConnect.Security.Web.SslValidationHttpConfiguration"/> class.
+            </summary>
+            <param name="logger">The logger.</param>
+            <param name="configuration">The configuration.</param>
+            <exception cref="T:System.ArgumentNullException">logger - SslValidationHttpConfiguration instance requires ILogger argument logger is not null.</exception>
+        </member>
+        <member name="M:Sitecore.XConnect.Security.Web.SslValidationHttpConfiguration.#ctor(Microsoft.Extensions.Logging.ILogger{Sitecore.XConnect.DependencyInjection.Web.Abstractions.IHttpConfiguration})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.XConnect.Security.Web.SslValidationHttpConfiguration"/> class.
+            </summary>
+            <param name="logger">The logger.</param>
+            <exception cref="T:System.ArgumentNullException">logger - SslValidationHttpConfiguration instance requires ILogger argument logger is not null.</exception>
+        </member>
+        <member name="M:Sitecore.XConnect.Security.Web.SslValidationHttpConfiguration.ConfigureServices(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Configures the services. Adds filter which allows requests only via https-protocol (exceptions- ignored paths, setup from config).
+            </summary>
+            <param name="config">The configuration.</param>
+        </member>
+        <member name="T:Sitecore.XConnect.Security.Web.SslValidationRequestFilter">
+            <summary>
+            Adds SSL validation filter to instance Http configuration.
+            Allows set of ignore paths for checking.
+            </summary>
+            <seealso cref="T:System.Web.Http.Filters.AuthorizationFilterAttribute" />
+        </member>
+        <member name="M:Sitecore.XConnect.Security.Web.SslValidationRequestFilter.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.XConnect.Security.Web.SslValidationRequestFilter"/> class.
+            </summary>
+        </member>
+        <member name="M:Sitecore.XConnect.Security.Web.SslValidationRequestFilter.#ctor(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.XConnect.Security.Web.SslValidationRequestFilter"/> class.
+            </summary>
+            <param name="ignoredPaths">The paths which aren't checked.</param>
+        </member>
+        <member name="M:Sitecore.XConnect.Security.Web.SslValidationRequestFilter.#ctor(System.Collections.Generic.HashSet{System.String})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.XConnect.Security.Web.SslValidationRequestFilter"/> class.
+            </summary>
+            <param name="ignoredPaths">The paths which aren't checked.</param>
+        </member>
+        <member name="M:Sitecore.XConnect.Security.Web.SslValidationRequestFilter.OnAuthorization(System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            Called when a process requests authorization.
+            </summary>
+            <param name="actionContext">The action context, which encapsulates information for using <see cref="T:System.Web.Http.Filters.AuthorizationFilterAttribute" />.</param>
+        </member>
+    </members>
+</doc>

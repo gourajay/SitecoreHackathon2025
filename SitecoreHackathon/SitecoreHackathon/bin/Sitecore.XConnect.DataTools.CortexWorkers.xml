@@ -1,0 +1,261 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sitecore.XConnect.DataTools.CortexWorkers</name>
+    </assembly>
+    <members>
+        <member name="M:Sitecore.XConnect.DataTools.CortexWorkers.Conditions.ChannelFilterToDeleteInteractionCondition.#ctor(System.Collections.Generic.IReadOnlyList{System.Guid})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.XConnect.DataTools.CortexWorkers.Conditions.ChannelFilterToDeleteInteractionCondition"/> class.
+            </summary>
+            <param name="channelIds">The channel ids.</param>
+        </member>
+        <member name="M:Sitecore.XConnect.DataTools.CortexWorkers.Conditions.ChannelFilterToSkipInteractionCondition.#ctor(System.Collections.Generic.IReadOnlyList{System.Guid})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.XConnect.DataTools.CortexWorkers.Conditions.ChannelFilterToSkipInteractionCondition"/> class.
+            </summary>
+            <param name="channelIds">The channel ids.</param>
+        </member>
+        <member name="M:Sitecore.XConnect.DataTools.CortexWorkers.Conditions.EventFilterToDeleteInteractionCondition.#ctor(System.Collections.Generic.IReadOnlyList{System.Guid})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.XConnect.DataTools.CortexWorkers.Conditions.EventFilterToDeleteInteractionCondition"/> class.
+            </summary>
+            <param name="eventIds">The event ids.</param>
+        </member>
+        <member name="M:Sitecore.XConnect.DataTools.CortexWorkers.Conditions.EventFilterToSkipInteractionCondition.#ctor(System.Collections.Generic.IReadOnlyList{System.Guid})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.XConnect.DataTools.CortexWorkers.Conditions.EventFilterToSkipInteractionCondition"/> class.
+            </summary>
+            <param name="eventIds">The event ids.</param>
+        </member>
+        <member name="M:Sitecore.XConnect.DataTools.CortexWorkers.Conditions.MarketingItemsBaseInteractionCondition.#ctor(System.Collections.Generic.IReadOnlyList{System.Guid})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.XConnect.DataTools.CortexWorkers.Conditions.MarketingItemsBaseInteractionCondition"/> class.
+            </summary>
+            <param name="itemIds">The marketing item ids for filtering.</param>
+        </member>
+        <member name="T:Sitecore.XConnect.DataTools.CortexWorkers.DataExport.IEntitiesExporter">
+            <summary>
+            Defines export batch tools
+            </summary>
+        </member>
+        <member name="M:Sitecore.XConnect.DataTools.CortexWorkers.DataExport.IEntitiesExporter.Export(System.Collections.Generic.IReadOnlyList{Sitecore.XConnect.Contact})">
+            <summary>
+            Exports the specified batch.
+            </summary>
+            <param name="batch">The batch.</param>
+            <returns>A task that represents the asynchronous export operation.</returns>
+        </member>
+        <member name="M:Sitecore.XConnect.DataTools.CortexWorkers.DataExport.IEntitiesExporter.Export(System.Collections.Generic.IReadOnlyList{Sitecore.XConnect.Interaction})">
+            <summary>
+            Exports the specified batch.
+            </summary>
+            <param name="batch">The batch.</param>
+            <returns>A task that represents the asynchronous export operation.</returns>
+        </member>
+        <member name="P:Sitecore.XConnect.DataTools.CortexWorkers.DataExport.IEntitiesExporter.FileNameExt">
+            <summary>
+            Gets the file name extension.
+            </summary>
+        </member>
+        <member name="T:Sitecore.XConnect.DataTools.CortexWorkers.DataExport.IFileNameGenerator">
+            <summary>
+            Declares generator of names for exported files. 
+            </summary>
+        </member>
+        <member name="M:Sitecore.XConnect.DataTools.CortexWorkers.DataExport.IFileNameGenerator.GenerateById(System.String,System.String,System.String)">
+            <summary>
+            Generates the name by pattern of the next exported file.
+            </summary>
+            <param name="prefix">Prefix for file name.</param>
+            <param name="id">The identifier.</param>
+            <param name="extension">The file extension.</param>
+            <returns>Generated name of exported file.</returns>
+        </member>
+        <member name="P:Sitecore.XConnect.DataTools.CortexWorkers.DataExport.StorageProviders.ExponentialRetryOptions.MaxRetries">
+            <summary>
+            The maximum number of retry attempts before giving up.
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.DataTools.CortexWorkers.DataExport.StorageProviders.ExponentialRetryOptions.DelayInSeconds">
+            <summary>
+            The delay between retry attempts for a fixed approach or the delay
+            on which to base calculations for a backoff-based approach.
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.DataTools.CortexWorkers.DataExport.StorageProviders.ExponentialRetryOptions.MaxDelayInSeconds">
+            <summary>
+            The maximum permissible delay between retry attempts.
+            </summary>
+        </member>
+        <member name="T:Sitecore.XConnect.DataTools.CortexWorkers.DataExport.StorageProviders.IStorageProvider">
+            <summary>
+            Defines an interface for data storage providers.
+            All the new storage providers must be inherited from this interface.
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.DataTools.CortexWorkers.DataExport.StorageProviders.IStorageProvider.ProfileNames">
+            <summary>
+            Gets the profile names that linked to the storage provider.
+            Profile is named set of specific provider properties, for instance
+            path to specific folder, credentials to establish connection to the storage, etc.
+            </summary>
+        </member>
+        <member name="M:Sitecore.XConnect.DataTools.CortexWorkers.DataExport.StorageProviders.IStorageProvider.UploadAsync(System.String,System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Uploads file with specified file name and content to the storage defined in
+            the profile asynchronously.
+            </summary>
+            <param name="fileName">The file name.</param>
+            <param name="fileContent">The file content.</param>
+            <param name="profileName">The profile name.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>The task.</returns>
+        </member>
+        <member name="T:Sitecore.XConnect.DataTools.CortexWorkers.DeleteContactsDistributedWorker">
+            <summary>
+            Defines Cortex Processing distributed worker for data purging, that reads already filtered contacts in batches
+            from an external data source and perform delete operation on that data.
+            </summary>
+        </member>
+        <member name="M:Sitecore.XConnect.DataTools.CortexWorkers.DeleteContactsDistributedWorker.#ctor(Microsoft.Extensions.Logging.ILogger,Sitecore.XConnect.IXdbContext,Sitecore.XConnect.DataTools.Tasks.Options.Workers.DeleteContactsDistributedWorkerOptions,System.Collections.Generic.IEnumerable{Sitecore.XConnect.DataTools.Abstractions.Conditions.ICondition})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.XConnect.DataTools.CortexWorkers.DeleteContactsDistributedWorker" /> class.
+            </summary>
+            <param name="logger">The logger.</param>
+            <param name="xdbContext">The Xdb Context to execute operations in XConnect.</param>
+            <param name="options">The distributed worker options dictionary.</param>
+            <param name="conditions">The conditions used to check whether a contact should be deleted.</param>
+        </member>
+        <member name="M:Sitecore.XConnect.DataTools.CortexWorkers.DeleteContactsDistributedWorker.#ctor(Microsoft.Extensions.Logging.ILogger,Sitecore.XConnect.IXdbContext,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String},System.Collections.Generic.IEnumerable{Sitecore.XConnect.DataTools.Abstractions.Conditions.ICondition})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.XConnect.DataTools.CortexWorkers.DeleteContactsDistributedWorker" /> class.
+            </summary>
+            <param name="logger">The logger.</param>
+            <param name="xdbContext">The Xdb Context to execute operations in XConnect.</param>
+            <param name="options">The distributed worker options dictionary.</param>
+            <param name="conditions">The conditions used to check whether a contact should be deleted.</param>
+        </member>
+        <member name="M:Sitecore.XConnect.DataTools.CortexWorkers.DeleteContactsDistributedWorker.ProcessBatchAsync(System.Collections.Generic.IReadOnlyList{Sitecore.XConnect.Contact},System.Threading.CancellationToken)">
+            <summary>
+            Method invoked when worker receives a batch of <see cref="T:Sitecore.XConnect.Contact" /> type entities.
+            </summary>
+            <param name="batch">The batch of contacts to process.</param>
+            <param name="token">Cancellation token that will indicate that request is canceled.</param>
+            <returns><see cref="T:System.Threading.Tasks.Task" /> object that represents state of asynchronous operation.</returns>
+        </member>
+        <member name="M:Sitecore.XConnect.DataTools.CortexWorkers.DeleteContactsDistributedWorker.Dispose">
+            <summary>
+            Disposes xdb context.
+            </summary>
+        </member>
+        <member name="T:Sitecore.XConnect.DataTools.CortexWorkers.DeleteInteractionsDistributedWorker">
+            <summary>
+            Defines Cortex Processing distributed worker for data purging, that reads already filtered interactions in batches
+            from an external data source and perform delete operation on that data.
+            </summary>
+        </member>
+        <member name="M:Sitecore.XConnect.DataTools.CortexWorkers.DeleteInteractionsDistributedWorker.#ctor(Microsoft.Extensions.Logging.ILogger,Sitecore.XConnect.IXdbContext,Sitecore.XConnect.DataTools.Tasks.Options.Workers.DeleteInteractionsDistributedWorkerOptions,Sitecore.XConnect.DataTools.CortexWorkers.Conditions.IConditionsBuilder)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.XConnect.DataTools.CortexWorkers.DeleteInteractionsDistributedWorker" /> class.
+            </summary>
+            <param name="logger">The logger.</param>
+            <param name="xdbContext">The Xdb Context to execute operations in XConnect.</param>
+            <param name="options">The distributed worker options dictionary.</param>
+            <param name="conditionsBuilder">The builder to build interaction condition filters.</param>
+        </member>
+        <member name="M:Sitecore.XConnect.DataTools.CortexWorkers.DeleteInteractionsDistributedWorker.#ctor(Microsoft.Extensions.Logging.ILogger,Sitecore.XConnect.IXdbContext,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String},Sitecore.XConnect.DataTools.CortexWorkers.Conditions.IConditionsBuilder)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.XConnect.DataTools.CortexWorkers.DeleteContactsDistributedWorker" /> class.
+            </summary>
+            <param name="logger">The logger.</param>
+            <param name="xdbContext">The Xdb Context to execute operations in XConnect.</param>
+            <param name="options">The distributed worker options dictionary.</param>
+            <param name="conditionsBuilder">The builder to build interaction condition filters.</param>
+        </member>
+        <member name="M:Sitecore.XConnect.DataTools.CortexWorkers.DeleteInteractionsDistributedWorker.ProcessBatchAsync(System.Collections.Generic.IReadOnlyList{Sitecore.XConnect.Interaction},System.Threading.CancellationToken)">
+            <summary>
+            Method invoked when worker receives a batch of <see cref="T:Sitecore.XConnect.Interaction" /> type entities.
+            </summary>
+            <param name="batch">The batch of interactions to process.</param>
+            <param name="token">Cancellation token that will indicate that request is canceled.</param>
+            <returns><see cref="T:System.Threading.Tasks.Task" /> object that represents state of asynchronous operation.</returns>
+        </member>
+        <member name="M:Sitecore.XConnect.DataTools.CortexWorkers.DeleteInteractionsDistributedWorker.Dispose">
+            <summary>
+            Disposes xdb context.
+            </summary>
+        </member>
+        <member name="T:Sitecore.XConnect.DataTools.CortexWorkers.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.DataTools.CortexWorkers.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.DataTools.CortexWorkers.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.DataTools.CortexWorkers.Resources.CouldNotFoundPartOfThePart">
+            <summary>
+              Looks up a localized string similar to Could not find a part of the path &apos;{0}&apos;.
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.DataTools.CortexWorkers.Resources.FileContentIsEmpty">
+            <summary>
+              Looks up a localized string similar to The file content is empty..
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.DataTools.CortexWorkers.Resources.FileNameIsNotSpecified">
+            <summary>
+              Looks up a localized string similar to The file name is not specified..
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.DataTools.CortexWorkers.Resources.InvalidConditionMessageFormat">
+            <summary>
+              Looks up a localized string similar to Cannot run delete contacts worker. The condition is not found: {0}.
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.DataTools.CortexWorkers.Resources.ParameterIsNotValid">
+            <summary>
+              Looks up a localized string similar to The &apos;{0}&apos; is not valid..
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.DataTools.CortexWorkers.Resources.ProfileNameHasToBeUnique">
+            <summary>
+              Looks up a localized string similar to The profile name &apos;{0}&apos; has to be unique..
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.DataTools.CortexWorkers.Resources.RetryerIsNotRegistered">
+            <summary>
+              Looks up a localized string similar to The &apos;{0}&apos; retryer is not registered..
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.DataTools.CortexWorkers.Resources.RunWorkerMessageFormat">
+            <summary>
+              Looks up a localized string similar to Run Worker: {0}.
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.DataTools.CortexWorkers.Resources.StorageAccountConnectionStringNameIsNotConfigured">
+            <summary>
+              Looks up a localized string similar to The storage account connection string name &apos;{0}&apos; is not configured..
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.DataTools.CortexWorkers.Resources.StorageProfileIsNotRegistered">
+            <summary>
+              Looks up a localized string similar to The &apos;{0}&apos; storage profile is not registered..
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.DataTools.CortexWorkers.Resources.StorageProfileNameIsNotSpecified">
+            <summary>
+              Looks up a localized string similar to The storage profile name is not specified.
+            </summary>
+        </member>
+    </members>
+</doc>

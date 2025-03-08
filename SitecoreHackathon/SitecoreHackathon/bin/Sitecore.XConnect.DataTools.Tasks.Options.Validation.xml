@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sitecore.XConnect.DataTools.Tasks.Options.Validation</name>
+    </assembly>
+    <members>
+        <member name="T:Sitecore.XConnect.DataTools.Tasks.Options.Validation.DataPurgeTaskOptionsValidator">
+            <summary>
+            Represents <see cref="T:Sitecore.Processing.Engine.Model.Options.Tasks.DistributedTaskOptions"/> options validation for data purge task registration.
+            </summary>
+        </member>
+        <member name="T:Sitecore.XConnect.DataTools.Tasks.Options.Validation.DataPurgeTaskOptionsValidatorOptions">
+            <summary>
+            Represents options used to configure data purge tasks.
+            </summary>
+        </member>
+        <member name="M:Sitecore.XConnect.DataTools.Tasks.Options.Validation.DataPurgeTaskOptionsValidatorOptions.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.XConnect.DataTools.Tasks.Options.Validation.DataPurgeTaskOptionsValidatorOptions"/> class.
+            </summary>
+            <param name="options">The configuration to read the options from.</param>
+        </member>
+        <member name="M:Sitecore.XConnect.DataTools.Tasks.Options.Validation.DataPurgeTaskOptionsValidatorOptions.#ctor(System.Int32,System.Int32,System.String[],System.String[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.XConnect.DataTools.Tasks.Options.Validation.DataPurgeTaskOptionsValidatorOptions" /> class.
+            </summary>
+            <param name="minimumContactCutoffDays">
+            The minimum number of days the contact hasn't been interacted with the brand
+            that can be specified for contacts data purge.
+            </param>
+            <param name="minimumInteractionStartedDaysCutoff">
+            The minimum number of days should be passed after
+            interaction started and interaction can be purged.
+            </param>
+            <param name="allowedContactConditionIds">The allowed contact condition ids.</param>
+            <param name="allowedInteractionConditionIds">The allowed interaction condition ids.</param>
+        </member>
+        <member name="P:Sitecore.XConnect.DataTools.Tasks.Options.Validation.DataPurgeTaskOptionsValidatorOptions.MinimumContactCutoffDays">
+            <summary>
+            Gets the minimum number of days the contact hasn't been interacted with the brand
+            that can be specified for contacts data purge.
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.DataTools.Tasks.Options.Validation.DataPurgeTaskOptionsValidatorOptions.MinimumInteractionStartedDaysCutoff">
+            <summary>
+            The minimum number of days should be passed after
+            interaction started and interaction can be purged.
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.DataTools.Tasks.Options.Validation.DataPurgeTaskOptionsValidatorOptions.AllowedContactConditionIds">
+            <summary>
+            Gets the IDs of the contact conditions that are allowed to be passed to a data purge task.
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.DataTools.Tasks.Options.Validation.DataPurgeTaskOptionsValidatorOptions.AllowedInteractionConditionIds">
+            <summary>
+            Gets the IDs of the interaction conditions that are allowed to be passed to a data purge task.
+            </summary>
+        </member>
+        <member name="T:Sitecore.XConnect.DataTools.Tasks.Options.Validation.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.DataTools.Tasks.Options.Validation.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.DataTools.Tasks.Options.Validation.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.DataTools.Tasks.Options.Validation.Resources.CantAccessFolderMessageFormat">
+            <summary>
+              Looks up a localized string similar to Cannot access the destination folder specified in the profile &apos;{0}&apos;. Access denied..
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.DataTools.Tasks.Options.Validation.Resources.DirectoryNotFoundMessageFormat">
+            <summary>
+              Looks up a localized string similar to The destination folder specified in the profile &apos;{0}&apos; is not found..
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.DataTools.Tasks.Options.Validation.Resources.InvalidContactConditionsMessageFormat">
+            <summary>
+              Looks up a localized string similar to Cannot register delete contacts task. The following conditions are not found: {0}.
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.DataTools.Tasks.Options.Validation.Resources.InvalidCutoffDaysForExportMessageFormat">
+            <summary>
+              Looks up a localized string similar to Cannot register export contacts task. Cutoff date time should be positive. Actual value is {1} days..
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.DataTools.Tasks.Options.Validation.Resources.InvalidCutoffDaysMessageFormat">
+            <summary>
+              Looks up a localized string similar to Cannot register delete contacts task. Cutoff date time should not be less than {0} days. Actual value is {1} days..
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.DataTools.Tasks.Options.Validation.Resources.InvalidInteractionChannelsMessageFormat">
+            <summary>
+              Looks up a localized string similar to Cannot register delete interactions task. The following channel IDs specified in both options - channels to delete and channels to skip: {0}..
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.DataTools.Tasks.Options.Validation.Resources.InvalidInteractionConditionsMessageFormat">
+            <summary>
+              Looks up a localized string similar to Cannot register delete interactions task. The following conditions are not found: {0}.
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.DataTools.Tasks.Options.Validation.Resources.InvalidInteractionEventsMessageFormat">
+            <summary>
+              Looks up a localized string similar to Cannot register delete interactions task. The following event IDs specified in both options - events to delete and events to skip: {0}..
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.DataTools.Tasks.Options.Validation.Resources.InvalidInteractionStartedDaysCutoff">
+            <summary>
+              Looks up a localized string similar to Cannot register delete interactions task. Interaction started date time should not be less than {0} days. Actual value is {1} days..
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.DataTools.Tasks.Options.Validation.Resources.InvalidStartedDaysCutoffForExportMessageFormat">
+            <summary>
+              Looks up a localized string similar to Cannot register export interactions task. Interaction started date time should be positive. Actual value is {1} days..
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.DataTools.Tasks.Options.Validation.Resources.ProfileNameIsNotSet">
+            <summary>
+              Looks up a localized string similar to The profile name is not set.
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.DataTools.Tasks.Options.Validation.Resources.UnexpectedErrorMessage">
+            <summary>
+              Looks up a localized string similar to Unexpected error during test file upload. .
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.DataTools.Tasks.Options.Validation.Resources.ValueShouldBeGreaterThanOrEqualToZero">
+            <summary>
+              Looks up a localized string similar to The value should be greater than or equal to zero.
+            </summary>
+        </member>
+    </members>
+</doc>
