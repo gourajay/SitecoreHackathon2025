@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sitecore.Xdb.Sql.Common.HealthCheck</name>
+    </assembly>
+    <members>
+        <member name="M:Sitecore.HealthCheck.SqlServer.HealthChecks.DependencyInjection.SqlServerHealthCheckBuilderExtensions.AddSqlServer(Sitecore.HealthCheck.DependencyInjection.IHealthChecksBuilder,System.String,System.String,System.String,System.Nullable{Microsoft.Extensions.Diagnostics.HealthChecks.HealthStatus},System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Add a health check for SqlServer services.
+            </summary>
+            <param name="builder">The <see cref="T:Sitecore.HealthCheck.DependencyInjection.IHealthChecksBuilder"/>.</param>
+            <param name="connectionString">The Sql Server connection string to be used.</param>
+            <param name="healthQuery">The query to be executed. Optional. If <c>null</c> select 1 is used.</param>
+            <param name="name">The health check name.</param>
+            <param name="failureStatus">
+            The <see cref="T:Microsoft.Extensions.Diagnostics.HealthChecks.HealthStatus"/> that should be reported when the health check fails. Optional. If <c>null</c> then
+            the default status of <see cref="F:Microsoft.Extensions.Diagnostics.HealthChecks.HealthStatus.Unhealthy"/> will be reported.
+            </param>
+            <param name="tags">A list of tags that can be used to filter sets of health checks. Optional.</param>
+            <returns>The <see cref="T:Sitecore.HealthCheck.DependencyInjection.IHealthChecksBuilder"/>.</returns>
+        </member>
+        <member name="M:Sitecore.HealthCheck.SqlServer.HealthChecks.DependencyInjection.SqlServerHealthCheckBuilderExtensions.AddSqlServer(Sitecore.HealthCheck.DependencyInjection.IHealthChecksBuilder,System.Func{System.IServiceProvider,System.String},System.String,System.String,System.Nullable{Microsoft.Extensions.Diagnostics.HealthChecks.HealthStatus},System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Add a health check for SqlServer services.
+            </summary>
+            <param name="builder">The <see cref="T:Sitecore.HealthCheck.DependencyInjection.IHealthChecksBuilder"/>.</param>
+            <param name="connectionStringFactory">A factory to build the SQL Server connection string to use.</param>
+            <param name="healthQuery">The query to be executed. Optional. If <c>null</c> select 1 is used.</param>
+            <param name="name">The health check name. Optional.</param>
+            <param name="failureStatus">
+            The <see cref="T:Microsoft.Extensions.Diagnostics.HealthChecks.HealthStatus"/> that should be reported when the health check fails. Optional. If <c>null</c> then
+            the default status of <see cref="F:Microsoft.Extensions.Diagnostics.HealthChecks.HealthStatus.Unhealthy"/> will be reported.
+            </param>
+            <param name="tags">A list of tags that can be used to filter sets of health checks. Optional.</param>
+            <returns>The <see cref="T:Sitecore.HealthCheck.DependencyInjection.IHealthChecksBuilder"/>.</returns>
+        </member>
+        <member name="T:Sitecore.HealthCheck.SqlServer.HealthChecks.SqlServer.SqlServerHealthCheck">
+            <summary>
+            Represents a health check, which can be used to check the status of a SqlServer.
+            </summary>
+        </member>
+        <member name="M:Sitecore.HealthCheck.SqlServer.HealthChecks.SqlServer.SqlServerHealthCheck.#ctor(System.String,System.String)">
+            <summary>
+            Initialize new instance of <see cref="T:Sitecore.HealthCheck.SqlServer.HealthChecks.SqlServer.SqlServerHealthCheck"/>.
+            </summary>
+            <param name="sqlServerConnectionString">Connection string to SQL server database.</param>
+            <param name="sqlQuery">SQL query that will be executed in order to check the status of SQL server database.</param>
+        </member>
+        <member name="M:Sitecore.HealthCheck.SqlServer.HealthChecks.SqlServer.SqlServerHealthCheck.CheckHealthAsync(Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckContext,System.Threading.CancellationToken)">
+            <inheritdoc cref="T:Microsoft.Extensions.Diagnostics.HealthChecks.IHealthCheck"/>
+        </member>
+        <member name="T:Sitecore.Xdb.Sql.Common.HealthCheck.HealthCheckServicesConfiguration">
+            <summary>
+            Configurator used to configure SQL health checks.
+            </summary>
+            <seealso cref="T:Sitecore.XConnect.DependencyInjection.Abstractions.IXConnectServicesConfiguration" />
+        </member>
+        <member name="M:Sitecore.Xdb.Sql.Common.HealthCheck.HealthCheckServicesConfiguration.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.Xdb.Sql.Common.HealthCheck.HealthCheckServicesConfiguration"/> class.
+            </summary>
+            <param name="options">The <see cref="T:Microsoft.Extensions.Configuration.IConfiguration"/> to read the options from.</param>
+        </member>
+        <member name="P:Sitecore.Xdb.Sql.Common.HealthCheck.HealthCheckServicesConfiguration.Query">
+            <summary>
+            Gets the query to be used for the database health check.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Xdb.Sql.Common.HealthCheck.HealthCheckServicesConfiguration.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sitecore.XConnect.DataTools.Abstractions</name>
+    </assembly>
+    <members>
+        <member name="T:Sitecore.XConnect.DataTools.Abstractions.Conditions.ICondition">
+            <summary>
+            Defines predicate for selecting <see cref="T:Sitecore.XConnect.Contact"/> by some condition.
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.DataTools.Abstractions.Conditions.ICondition.ConditionId">
+            <summary>
+            Gets the condition id.
+            </summary>
+        </member>
+        <member name="M:Sitecore.XConnect.DataTools.Abstractions.Conditions.ICondition.IsAccepted(Sitecore.XConnect.Contact)">
+            <summary>
+            Determines whether the specified contact is accepted.
+            </summary>
+            <param name="contact">The <see cref="T:Sitecore.XConnect.Contact"/>.</param>
+            <returns>
+              <c>true</c> if the specified contact is accepted; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="T:Sitecore.XConnect.DataTools.Abstractions.Conditions.IInteractionCondition">
+            <summary>
+            Defines predicate for selecting <see cref="T:Sitecore.XConnect.Interaction"/> by some condition.
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.DataTools.Abstractions.Conditions.IInteractionCondition.ConditionId">
+            <summary>
+            Gets the condition id.
+            </summary>
+        </member>
+        <member name="M:Sitecore.XConnect.DataTools.Abstractions.Conditions.IInteractionCondition.IsAccepted(Sitecore.XConnect.Interaction)">
+            <summary>
+            Determines whether the specified interaction is accepted.
+            </summary>
+            <param name="interaction">The <see cref="T:Sitecore.XConnect.Interaction"/>.</param>
+            <returns>
+              <c>true</c> if the specified interaction is accepted; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="T:Sitecore.XConnect.DataTools.Abstractions.IUploadManager">
+            <summary>
+            Defines an interface for uploading files into the storage specified in the registered profile.
+            </summary>
+        </member>
+        <member name="M:Sitecore.XConnect.DataTools.Abstractions.IUploadManager.UploadAsync(System.String,System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Uploads the asynchronously.
+            </summary>
+            <param name="fileName">Name of the file.</param>
+            <param name="fileContent">Content of the file.</param>
+            <param name="profileName">Name of the profile.</param>
+            <param name="token">The token.</param>
+        </member>
+    </members>
+</doc>

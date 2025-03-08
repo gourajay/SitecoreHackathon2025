@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sitecore.XConnect.HealthCheck.WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:Sitecore.XConnect.HealthCheck.WebApi.Controllers.HealthzController">
+            <summary>
+            Controller that provides liveness and readiness health check methods for web-roles.
+            </summary>
+            <seealso cref="T:System.Web.Http.ApiController" />
+        </member>
+        <member name="M:Sitecore.XConnect.HealthCheck.WebApi.Controllers.HealthzController.#ctor(Microsoft.Extensions.Configuration.IConfiguration,System.IServiceProvider,Microsoft.Extensions.Logging.ILogger{Sitecore.XConnect.HealthCheck.WebApi.Controllers.HealthzController})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.XConnect.HealthCheck.WebApi.Controllers.HealthzController" /> class.
+            </summary>
+            <param name="configuration">The configuration to retrieve parameters from.</param>
+            <param name="serviceProvider">The provider to resolve services from.</param>
+            <param name="logger">The logger to log messages to.</param>
+        </member>
+        <member name="P:Sitecore.XConnect.HealthCheck.WebApi.Controllers.HealthzController.HealthCheckService">
+            <summary>
+            Gets the service used to run health checks.
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.HealthCheck.WebApi.Controllers.HealthzController.TimeoutSeconds">
+            <summary>
+            Gets the time interval in seconds to wait before canceling health check run.
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.HealthCheck.WebApi.Controllers.HealthzController.Logger">
+            <summary>
+            Gets the logger to log messages to.
+            </summary>
+        </member>
+        <member name="M:Sitecore.XConnect.HealthCheck.WebApi.Controllers.HealthzController.Live">
+            <summary>
+            Returns <see cref="F:System.Net.HttpStatusCode.OK"/> as the sign that instance is live.
+            </summary>
+        </member>
+        <member name="M:Sitecore.XConnect.HealthCheck.WebApi.Controllers.HealthzController.Ready">
+            <summary>
+            Returns the readiness state of the system running registered health checks with tag 'ready'.
+            </summary>
+        </member>
+        <member name="T:Sitecore.XConnect.HealthCheck.WebApi.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.HealthCheck.WebApi.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.HealthCheck.WebApi.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.HealthCheck.WebApi.Resources.HealthReportIsNull">
+            <summary>
+              Looks up a localized string similar to Health check service must return report.
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.HealthCheck.WebApi.Resources.NoHttpStatusCodeMappingForHealthStatusCode">
+            <summary>
+              Looks up a localized string similar to Readiness health check run has been finished with unexpected health status: {0}. No HTTP status code mapping found for it..
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.HealthCheck.WebApi.Resources.ReadinessHealthCheckCanceled">
+            <summary>
+              Looks up a localized string similar to Readiness health check run has been canceled by timeout ({0}).
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.HealthCheck.WebApi.Resources.ReadinessHealthCheckFailed">
+            <summary>
+              Looks up a localized string similar to Readiness health check run has been failed.
+            </summary>
+        </member>
+    </members>
+</doc>
