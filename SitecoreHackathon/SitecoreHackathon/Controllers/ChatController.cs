@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlTypes;
-using System.Linq;
-using System.Web;
-using Sitecore;
-using Sitecore.Shell.Framework.Commands;
-using Sitecore.Text;
-using Sitecore.Web.UI.Sheer;
-using Sitecore.Web.UI.Xaml;
+﻿using System.Collections.Generic;
+using System.Web.Mvc;
 
-namespace SitecoreHackathon.Commands
+public class ChatController : Controller
 {
     [HttpPost]
     public ActionResult SendMessage(string query)
@@ -43,21 +35,5 @@ namespace SitecoreHackathon.Commands
     public ActionResult ChatHistory()
     {
         return PartialView("_ChatMessage");
-    }
-
-    public class FridayAI : Command
-    {
-        public override void Execute(CommandContext context)
-        {
-            Sitecore.Context.ClientPage.Start(this, "Run", context.Parameters);
-        }
-
-        protected static void Run(ClientPipelineArgs args)
-        {
-            if (!args.IsPostBack)
-            {
-                HttpContext.Current.Response.Redirect("/Index");
-            }
-        }
     }
 }

@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Chat with Gemini AI";
+}
+
+<div id="chat-container">
+    <div id="chat-header" onclick="toggleChat()">Chat with Gemini</div>
+
+    <div id="chat-body">
+        @Html.Action("ChatHistory", "Chat") <!-- Load chat history -->
+    </div>
+
+    <div id="chat-footer">
+        @using (Html.BeginForm("SendMessage", "Chat", FormMethod.Post, new { id = "chat-form" }))
+        {
+            <input type="text" id="chat-input" name="query" placeholder="Type a message..." autocomplete="off" />
+            <button type="submit">Send</button>
+        }
+    </div>
+</div>
+
+<button id="chat-icon" onclick="toggleChat()">💬</button>

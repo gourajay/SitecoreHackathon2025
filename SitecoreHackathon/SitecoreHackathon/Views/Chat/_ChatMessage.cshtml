@@ -1,0 +1,8 @@
+﻿@{
+    var messages = (List<string>)Session["ChatMessages"] ?? new List<string>();
+}
+
+@foreach (var message in messages)
+{
+    <div class="chat-message">@Html.Raw(message)</div>
+}
