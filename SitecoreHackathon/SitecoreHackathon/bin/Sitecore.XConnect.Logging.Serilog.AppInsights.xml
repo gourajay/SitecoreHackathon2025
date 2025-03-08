@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sitecore.XConnect.Logging.Serilog.AppInsights</name>
+    </assembly>
+    <members>
+        <member name="T:Sitecore.XConnect.Logging.Serilog.AppInsights.Extensions">
+            <summary>
+            Extensions for logger configurations.
+            </summary>
+        </member>
+        <member name="M:Sitecore.XConnect.Logging.Serilog.AppInsights.Extensions.SitecoreApplicationInsightsSink(Serilog.Configuration.LoggerSinkConfiguration,System.String,System.Boolean,System.Int32,Serilog.Events.LogEventLevel,System.Int32,Sitecore.XConnect.Logging.Serilog.AppInsights.ITelemetryConfigurator)">
+            <summary>
+            Adds <see cref="T:Serilog.Sinks.ApplicationInsights.ApplicationInsightsTracesSink"/> sink to the logger configuration.
+            </summary>
+            <param name="loggerConfiguration">The logger configuration to add the sink to.</param>
+            <param name="instrumentationKeyAppSettingKey">The application setting key to read App Insights instrumentation key by.</param>
+            <param name="developerMode"><c>true</c> to configure telemetry channel with developer mode; otherwise, <c>false</c>.</param>
+            <param name="maxBuffer">The maximum capacity of the telemetry buffer.</param>
+            <param name="minimumLevel">The minimum log level to restrict to.</param>
+            <param name="sendingInterval">The sending interval in seconds.</param>
+            <param name="telemetryConfigurator">Optional, the configurator used to configure telemetry.</param>
+            <returns><see cref="T:Serilog.LoggerConfiguration"/></returns>
+        </member>
+        <member name="T:Sitecore.XConnect.Logging.Serilog.AppInsights.ITelemetryConfigurator">
+            <summary>
+            Defines configurator used to configure <see cref="T:Microsoft.ApplicationInsights.Extensibility.TelemetryConfiguration"/>.
+            </summary>
+        </member>
+        <member name="M:Sitecore.XConnect.Logging.Serilog.AppInsights.ITelemetryConfigurator.Configure(Microsoft.ApplicationInsights.Extensibility.TelemetryConfiguration)">
+            <summary>
+            Configures the <see cref="T:Microsoft.ApplicationInsights.Extensibility.TelemetryConfiguration"/>.
+            </summary>
+            <param name="configuration">The configuration to configure.</param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sitecore.XConnect.Logging.Serilog</name>
+    </assembly>
+    <members>
+        <member name="T:Sitecore.XConnect.Logging.Serilog.Extensions">
+            <summary>
+            Extensions for <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.
+            </summary>
+        </member>
+        <member name="M:Sitecore.XConnect.Logging.Serilog.Extensions.UseSerilog(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Registers Serilog services.
+            </summary>
+            <param name="services">The service collections to add service registrations to.</param>
+        </member>
+        <member name="T:Sitecore.XConnect.Logging.Serilog.LoggerConfigurationExtensions">
+             <summary>
+            Extensions for logger configurations.
+             </summary>
+        </member>
+        <member name="M:Sitecore.XConnect.Logging.Serilog.LoggerConfigurationExtensions.RegisterLoggerFromConfiguration(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Registers the logger from the configuration.
+            </summary>
+            <param name="configuration">The configuration to read from.</param>
+        </member>
+        <member name="M:Sitecore.XConnect.Logging.Serilog.LoggerConfigurationExtensions.XConnectConfiguration(Serilog.Configuration.LoggerSettingsConfiguration,Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.DependencyModel.DependencyContext)">
+            <summary>
+            Reads logger settings from the provided configuration.
+            </summary>
+            <param name="settings">Logger setting configuration.</param>
+            <param name="configuration">A configuration object with a Serilog section.</param>
+            <param name="dependencyContext">The dependency context from which sink/enricher packages can be located. If not supplied, the platform
+            default will be used.</param>
+            <returns>An object allowing configuration to continue.</returns>
+        </member>
+        <member name="M:Sitecore.XConnect.Logging.Serilog.LoggerConfigurationExtensions.ByMutedException(Serilog.Configuration.LoggerFilterConfiguration,System.Int32,System.String)">
+            <summary>
+            Filter out log events from the stream based on the filter for muted exceptions.
+            </summary>
+            <param name="loggerFilterConfiguration">The logger filter configuration.</param>
+            <param name="mutePeriod">The period in seconds to mute exception logging.</param>
+            <param name="pattern">The pattern to match the exception by.</param>
+            <returns>Configuration object allowing method chaining.</returns>
+        </member>
+        <member name="T:Sitecore.XConnect.Logging.Serilog.MutedExceptionLogEventFilter">
+            <summary>
+            The filter used to mute exception logging for some period of time.
+            </summary>
+        </member>
+        <member name="M:Sitecore.XConnect.Logging.Serilog.MutedExceptionLogEventFilter.#ctor(System.Int32,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.XConnect.Logging.Serilog.MutedExceptionLogEventFilter"/> class.
+            </summary>
+            <param name="mutePeriod">The period in seconds to mute exception logging.</param>
+            <param name="pattern">The pattern to match the exception by.</param>
+        </member>
+        <member name="P:Sitecore.XConnect.Logging.Serilog.MutedExceptionLogEventFilter.MutePeriod">
+            <summary>
+            Gets the period in seconds to mute exception logging.
+            </summary>
+        </member>
+        <member name="P:Sitecore.XConnect.Logging.Serilog.MutedExceptionLogEventFilter.Pattern">
+            <summary>
+            Gets the pattern to match the exception by.
+            </summary>
+        </member>
+        <member name="M:Sitecore.XConnect.Logging.Serilog.MutedExceptionLogEventFilter.IsEnabled(Serilog.Events.LogEvent)">
+            <inheritdoc />
+        </member>
+        <member name="M:Sitecore.XConnect.Logging.Serilog.MutedExceptionLogEventFilter.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="M:Sitecore.XConnect.Logging.Serilog.MutedExceptionLogEventFilter.Dispose(System.Boolean)">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+            <param name="disposing">
+            <c>true</c> to release both managed and unmanaged resources;
+            <c>false</c> to release only unmanaged resources.
+            </param>
+        </member>
+    </members>
+</doc>

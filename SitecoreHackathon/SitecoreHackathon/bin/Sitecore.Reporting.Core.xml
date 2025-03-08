@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sitecore.Reporting.Core</name>
+    </assembly>
+    <members>
+        <member name="F:Sitecore.Reporting.Core.Helpers.ReportingServicesPathLocator.registry">
+            <summary>
+            A registry containing the mappings between service names and service paths.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Reporting.Core.Helpers.ReportingServicesPathLocator.Register(System.String,System.String)">
+            <summary>
+            Registers a new service path in the locator.
+            </summary>
+            <param name="serviceName">The service's name. The name must be unique and non-empty.</param>
+            <param name="servicePath">The service's path.</param>
+            <exception cref="T:System.ArgumentException">If the service name is null or empty; or if the service name is not unique</exception>
+        </member>
+        <member name="M:Sitecore.Reporting.Core.Helpers.ReportingServicesPathLocator.GetServicePath(System.String)">
+            <summary>
+            Retrieves a service from the registry. 
+            </summary>
+            <param name="serviceName">The name of the service to search in the registry. The name must be non-empty.</param>
+            <returns>The service path.</returns>
+            <exception cref="T:System.ArgumentException">
+            If the service name is null or empty or the service is not registered in the registry.
+            </exception>
+        </member>
+        <member name="T:Sitecore.Reporting.Core.Services.Hashing.Crc64HashAlgorithm">
+            <summary>
+            Crc has a hight collisions rate so it must be used wisely
+            </summary>
+        </member>
+        <member name="F:Sitecore.Reporting.Core.Services.Hashing.Crc64HashAlgorithm.DefaultSeed">
+            <summary>
+            Default seed
+            </summary>
+        </member>
+        <member name="M:Sitecore.Reporting.Core.Services.Hashing.Crc64HashAlgorithm.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.Reporting.Core.Services.Hashing.Crc64HashAlgorithm"/> class.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Reporting.Core.Services.Hashing.Crc64HashAlgorithm.#ctor(System.UInt64)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sitecore.Reporting.Core.Services.Hashing.Crc64HashAlgorithm"/> class.
+            </summary>
+            <param name="seed">The seed.</param>
+        </member>
+        <member name="M:Sitecore.Reporting.Core.Services.Hashing.Crc64HashAlgorithm.Initialize">
+            <summary>
+            Initializes an implementation of the class.
+            </summary>
+        </member>
+        <member name="M:Sitecore.Reporting.Core.Services.Hashing.Crc64HashAlgorithm.HashCore(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Computes hash.
+            </summary>
+            <param name="buffer">The buffer.</param>
+            <param name="start">The start.</param>
+            <param name="length">The length.</param>
+        </member>
+        <member name="M:Sitecore.Reporting.Core.Services.Hashing.Crc64HashAlgorithm.HashFinal">
+            <summary>
+            When overridden in a derived class, finalizes the hash computation after the last data is processed by the cryptographic stream object.
+            </summary>
+            <returns>The computed hash code.</returns>
+        </member>
+        <member name="P:Sitecore.Reporting.Core.Services.Hashing.Crc64HashAlgorithm.HashSize">
+            <summary>
+            Gets the size, in bits, of the computed hash code.
+            </summary>
+            <value></value>
+            <returns>The size, in bits, of the computed hash code.</returns>
+        </member>
+        <member name="M:Sitecore.Reporting.Core.Services.Hashing.Crc64HashAlgorithm.Compute(System.UInt64,System.Byte[])">
+            <summary>
+            Computes hash for the specified buffer.
+            </summary>
+            <param name="seed">The seed.</param>
+            <param name="buffer">The buffer.</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
